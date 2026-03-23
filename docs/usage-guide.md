@@ -8,8 +8,8 @@
 
 ```
 claude-prompts/
-├── skills/library/          ← 스킬 라이브러리 (8개)
-├── agents/registry/         ← 에이전트 레지스트리 (12개)
+├── skills/library/          ← 스킬 라이브러리 (9개)
+├── agents/registry/         ← 에이전트 레지스트리 (14개)
 ├── teams/templates/         ← 팀 생성/운영 템플릿
 ├── teams/examples/          ← 팀 구성 완성 예시
 └── _common/                 ← 공통 규칙 (플레이스홀더, 평가 기준)
@@ -317,6 +317,8 @@ Phase 정의
 
 | Agent | 기본 스킬 | 선택 스킬 |
 |-------|----------|----------|
+| **system-planner** | `project-planning` | `doc-generator` |
+| **project-manager** | `project-planning` | — |
 | **project-lead** | — | — |
 | **review-lead** | `code-review` | — |
 | **audit-lead** | `code-review` | — |
@@ -336,13 +338,37 @@ Phase 정의
 
 | 작업 | 추천 구성 | 규모 | 패턴 |
 |------|----------|------|------|
-| 새 기능 개발 | project-lead + backend + frontend + tester | 4명 | Hub-and-spoke |
+| 신규 프로젝트 (기획→개발) | project-lead + **system-planner** + **project-manager** + backend + frontend + tester | 6명 | Hub-and-spoke |
+| 새 기능 개발 (기획 포함) | project-lead + **system-planner** + backend + frontend + tester | 5명 | Hub-and-spoke |
+| 새 기능 개발 (기획 완료) | project-lead + backend + frontend + tester | 4명 | Hub-and-spoke |
 | 소규모 기능 | project-lead + fullstack + tester | 3명 | Hub-and-spoke |
 | PR 코드 리뷰 | review-lead + code-reviewer + security-auditor | 3명 | Pipeline |
 | 버그 수정 | project-lead + debugger + tester | 3명 | Hub-and-spoke |
 | 보안 감사 | audit-lead + security-auditor + code-reviewer | 3명 | Parallel |
 | 문서 작성 | project-lead + tech-writer | 2명 | Hub-and-spoke |
 | 리팩토링 | project-lead + fullstack + code-reviewer | 3명 | Hub-and-spoke |
+
+### 기획 포함 팀의 워크플로우
+
+기획 Agent가 포함된 팀은 설계 전에 기획 Phase가 추가됩니다:
+
+```
+Phase 0 - 기획 (순차)
+  └─ system-planner: 요구사항 분석, 기능 명세서, 화면 흐름 작성
+  └─ project-manager: WBS 작성, 일정 산정, 마일스톤 정의
+
+Phase 1 - 설계 (순차)
+  └─ 리더: 기획 산출물 기반으로 API 스펙, DB 스키마 설계
+
+Phase 2 - 구현 (병렬)
+  └─ backend-dev + frontend-dev 동시 작업
+
+Phase 3 이후 - 테스트/리뷰/통합
+  └─ (기존과 동일)
+```
+
+기획 산출물(요구사항 명세서, 기능 명세서)이 이후 모든 Phase의 입력이 됩니다.
+세부 기술 문서(API 스펙, DB 스키마, 아키텍처 문서)는 각 담당자가 작성합니다.
 
 ---
 

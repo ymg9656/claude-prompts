@@ -6,6 +6,8 @@
 
 | Agent명 | 카테고리 | 역할 요약 | 기본 스킬 | 선택 스킬 |
 |---------|---------|-----------|----------|----------|
+| [System Planner](planning/system-planner.md) | Planning | 시스템 기획자 — 시스템/서비스 기획, 요구사항 분석, 기능 명세, 프로젝트 문서 관리 | `project-planning` | `doc-generator` |
+| [Project Manager](planning/project-manager.md) | Planning | 프로젝트 매니저 — 일정 관리, 업무 조율, 리소스 배분, 리스크 관리 | `project-planning` | — |
 | [Project Lead](leaders/project-lead.md) | Leaders | 범용 프로젝트 리더 — 작업 분해, 멤버 분배, 진행 관리, 결과 통합 | — | — |
 | [Review Lead](leaders/review-lead.md) | Leaders | 리뷰 전문 리더 — 리뷰 파이프라인 관리, 발견사항 통합, 최종 판정 | `code-review` | — |
 | [Audit Lead](leaders/audit-lead.md) | Leaders | 감사 전문 리더 — 보안/품질 감사 조율, 리스크 매트릭스 작성 | `code-review` | — |
@@ -39,6 +41,7 @@
 
 | 카테고리 | 설명 | 리더 필요 여부 |
 |---------|------|--------------|
+| **Planning** | 시스템/서비스 기획, 프로젝트 관리, 문서 관리를 담당하는 기획 Agent | 권장 |
 | **Leaders** | 팀을 조율하고 작업을 분배하는 리더 Agent | 해당 없음 (리더 자체) |
 | **Developers** | 코드를 직접 작성하고 구현하는 개발 Agent | 권장 |
 | **Quality** | 코드 품질, 보안, 테스트를 담당하는 품질 Agent | 권장 |
