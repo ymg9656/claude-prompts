@@ -9,9 +9,11 @@
 | [prompt-structure.md](./prompt-structure.md) | 5단계 프롬프트 표준 구조 |
 | [placeholders.md](./placeholders.md) | 플레이스홀더 작성 규칙 |
 | [evaluation-criteria.md](./evaluation-criteria.md) | 공통 평가 기준 체크리스트 |
+| [architecture-principles.md](./architecture-principles.md) | Agent/Skill/Team 설계 시 아키텍처 원칙 |
 
 ## 활용 방법
 
 1. 새 템플릿 작성 시 `prompt-structure.md`의 구조를 따릅니다
 2. 플레이스홀더는 `placeholders.md` 규칙에 맞춰 작성합니다
 3. 품질 기준 섹션은 `evaluation-criteria.md`를 기반으로 합니다
+4. Agent/Skill/Team 설계 시 `architecture-principles.md`의 계층 구조와 패턴을 참조합니다

@@ -11,9 +11,9 @@
 | [Project Lead](leaders/project-lead.md) | Leaders | 범용 프로젝트 리더 — 작업 분해, 멤버 분배, 진행 관리, 결과 통합 | — | — |
 | [Review Lead](leaders/review-lead.md) | Leaders | 리뷰 전문 리더 — 리뷰 파이프라인 관리, 발견사항 통합, 최종 판정 | `code-review` | — |
 | [Audit Lead](leaders/audit-lead.md) | Leaders | 감사 전문 리더 — 보안/품질 감사 조율, 리스크 매트릭스 작성 | `code-review` | — |
-| [Backend Dev](developers/backend-dev.md) | Developers | 백엔드 개발자 — REST API, DB, 서비스 로직 구현 | `git-commit`, `test-runner`, `lint-fix` | `api-generator`, `db-migration` |
-| [Frontend Dev](developers/frontend-dev.md) | Developers | 프론트엔드 개발자 — UI 컴포넌트, 상태관리, API 연동 | `git-commit`, `test-runner`, `lint-fix` | — |
-| [Fullstack Dev](developers/fullstack-dev.md) | Developers | 풀스택 개발자 — 프론트+백엔드 통합, 소규모 팀용 | `git-commit`, `test-runner`, `lint-fix` | `api-generator` |
+| [Backend Dev](developers/backend-dev.md) | Developers | 백엔드 개발자 — REST API, DB, 서비스 로직 구현 | `git-commit`, `test-runner`, `lint-fix` | `api-generator`, `db-migration`, `technical-spec` |
+| [Frontend Dev](developers/frontend-dev.md) | Developers | 프론트엔드 개발자 — UI 컴포넌트, 상태관리, API 연동 | `git-commit`, `test-runner`, `lint-fix` | `technical-spec` |
+| [Fullstack Dev](developers/fullstack-dev.md) | Developers | 풀스택 개발자 — 프론트+백엔드 통합, 소규모 팀용 | `git-commit`, `test-runner`, `lint-fix` | `api-generator`, `technical-spec` |
 | [Tester](quality/tester.md) | Quality | 테스트 전문가 — 단위/통합/E2E 테스트, 커버리지 분석 | `test-runner`, `lint-fix` | — |
 | [Code Reviewer](quality/code-reviewer.md) | Quality | 코드 리뷰어 — 코드 품질, 아키텍처 준수, 보안 취약점 검토 | `code-review`, `lint-fix` | — |
 | [Security Auditor](quality/security-auditor.md) | Quality | 보안 감사자 — OWASP Top 10, 의존성 취약점, 인프라 보안 점검 | `code-review` | — |
